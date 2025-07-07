@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Zentry</title>
+    <style>
+        body {
+            background-color: #F2FEF7;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 106, 113, 0.2);
+            width: 300px;
+        }
+
+        h2 {
+            color: #006A71;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #9ACBD0;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #006A71;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .msg {
+            margin-top: 10px;
+            color: red;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #48A6A7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-box">
+        <h2>Crear cuenta</h2>
+        <form method="POST">
+            <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+            <input type="password" name="contraseña" placeholder="Contraseña" required>
+            <input type="text" name="pais" placeholder="País" required>
+            <input type="submit" value="Registrarse">
+        </form>
+        <a href="/login">¿Ya tienes cuenta?</a>
+        {% if message %}
+        <div class="msg">{{ message }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
